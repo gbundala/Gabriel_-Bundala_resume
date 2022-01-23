@@ -1,0 +1,277 @@
+/* GENERAL STYLES */
+
+/* 
+These are the general styles that are applicable accross
+the entire web page to provide a consistent and robust 
+design and UI
+
+For each individual section and part of the HTML their styles
+have been grouped together below with a comment to demarcate
+the section that the styles refer to
+*/
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: hsl(210, 17%, 27%);
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Courier New", Courier, monospace;
+}
+
+a {
+  color: hsl(180, 89%, 36%);
+  text-decoration: none;
+}
+
+a:hover {
+  color: hsl(180, 81%, 61%);
+  text-decoration: none;
+}
+
+/* HEADER */
+header {
+  /* In order to create its own staking context so as to avoid a z-index war we specify the isolation: isolate declaration */
+  isolation: isolate;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  opacity: 0;
+  width: 100%;
+  background-color: hsl(180, 8%, 51%) !important;
+}
+
+header:hover {
+  opacity: 0.3;
+}
+/* COVER */
+
+#cover {
+  background: url("./images/gabriel-sitting.jpeg") top center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+#cover:before {
+  content: "";
+  position: absolute;
+  background: hsla(174, 67%, 6%, 0.3);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+#cover .cover-wrapper {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  z-index: 2;
+  min-width: 300px;
+}
+#cover h1 {
+  margin: 0 0 10px 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 56px;
+  color: hsl(0, 0%, 100%);
+}
+#cover p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 50px;
+  font-size: 26px;
+}
+
+@media (min-width: 1024px) {
+  #cover {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+  #cover h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+/* SECTIONS */
+
+section {
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background: hsl(180, 67%, 98%);
+}
+
+.section-title {
+  padding-bottom: 30px;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: hsl(180, 65%, 26%);
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: hsl(172, 83%, 47%);
+  bottom: 0;
+  left: 0;
+}
+.section-title p {
+  margin-bottom: 0;
+}
+
+/* BIO */
+
+.bio-top-paragraph {
+  font-style: italic;
+}
+
+.bio .img-fluid {
+  border-radius: 10px;
+}
+
+.bio .content h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: hsl(167, 65%, 26%);
+}
+.bio .content ul {
+  list-style: none;
+  padding: 0;
+}
+.bio .content ul li {
+  margin-bottom: 23px;
+  display: flex;
+  align-items: center;
+}
+.bio .content ul strong {
+  margin-right: 10px;
+}
+.bio .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: hsl(170, 83%, 47%);
+  line-height: 0;
+}
+.bio .content p:last-child {
+  margin-bottom: 0;
+}
+
+/* RESUME */
+
+.resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: hsl(177, 66%, 6%);
+}
+
+.resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid hsl(170, 83%, 47%);
+  position: relative;
+}
+
+.resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: hsl(161, 66%, 6%);
+  margin-bottom: 10px;
+}
+
+.resume-item h5 {
+  font-size: 16px;
+  background: hsl(174, 64%, 94%);
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resume-item ul {
+  padding-left: 20px;
+}
+
+.resume-item ul li {
+  padding-bottom: 10px;
+}
+
+.resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  left: -9px;
+  top: 0;
+  background: hsl(170, 83%, 47%);
+  border: 2px solid hsl(170, 83%, 45%);
+}
+
+/* PROJECTS */
+
+.card-title .card-subtitle {
+  font-family: monospace !important;
+}
+
+.project-item {
+  margin-bottom: 40px;
+  box-shadow: 0.6px 0.5px 1px hsl(179deg 36% 59% / 0.21),
+    1px 0.8px 1.6px -0.9px hsl(179deg 36% 59% / 0.27),
+    2.2px 1.7px 3.4px -1.7px hsl(179deg 36% 59% / 0.34);
+}
+
+/* GET IN TOUCH */
+
+.get-in-touch {
+  padding-bottom: 200px;
+}
+
+.get-in-touch-wrapper {
+  padding: 24px;
+}
+.get-in-touch-button {
+  margin: 0 auto;
+}
+
+/* FOOTER */
+footer {
+  padding: 15px;
+  color: hsl(167, 82%, 9%);
+  font-size: 17px;
+  color: hsl(176, 17%, 80%);
+  margin-top: -100px;
+  text-align: center;
+}
+
+@media (max-width: 1199px) {
+  footer {
+    position: static;
+    width: auto;
+  }
+}
