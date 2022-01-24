@@ -200,11 +200,13 @@ section {
   margin-bottom: 10px;
 }
 
+/* To enhance the visual vertical symmetry, hence the padding
+values below were used after cross-checking the web app UI */
 .resume-item h5 {
   font-size: 16px;
   color: hsl(176, 64%, 9%);
   background: hsl(174, 64%, 94%);
-  padding: 10px 20px;
+  padding: 12px 20px 8px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
