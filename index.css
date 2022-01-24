@@ -202,8 +202,9 @@ section {
 
 .resume-item h5 {
   font-size: 16px;
+  color: hsl(176, 64%, 9%);
   background: hsl(174, 64%, 94%);
-  padding: 5px 15px;
+  padding: 10px 20px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
